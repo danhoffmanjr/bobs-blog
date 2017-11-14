@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:500');
 
 html, * {
     margin: 0;
@@ -43,7 +44,7 @@ nav {
 nav ul {
     display: none;
     list-style: none;
-    background: #111;
+    background: #006bbd;
 }
 
 nav ul li {
@@ -54,25 +55,26 @@ nav ul li {
 nav ul li a {
     display: block;
     padding: 1rem;
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.25) 100%);
     color: white;
     font-size: 1.2rem;
     text-decoration: none;
     transition: color 0.2s, background 0.5s;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a.active {
     color: #c7c538;
-    background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+    background: linear-gradient(315deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);
 }
 
-input.trigger {
+input[type="checkbox"] {
     position: absolute;
     top: -9999px;
     left: -9999px;
+    border: 1px solid red;
 }
 
-input.trigger:checked ~ ul {
+input[type="checkbox"]:checked ~ ul {
     display: block !important;
 }
 
@@ -89,7 +91,7 @@ label {
     color: #bfe1fb;
 }
 
-  label:after {
+label:after {
     position: absolute;
     right: 1em;
     top: .2em;
@@ -110,13 +112,30 @@ main {
     margin: 0;
 }
 
-h2, h3 {
-    margin-bottom: .5rem;
+h2 {
+    margin: .75rem 0 .25rem 0;
+    font-size: 1.8rem;
+}
+
+h3 {
+    margin: .75rem 0 .25rem 0;
+    font-size: 1.4rem;
 }
 
 aside[role="page-sidebar"] {
     background-color: lightslategray;
     padding: 2rem;
+}
+
+img {
+    margin: 1rem 0;
+    width: 100%;
+}
+
+p {
+    padding: .5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
 }
 
 article {
@@ -131,7 +150,6 @@ article section {
 }
 
 footer {
-    /* border: 1px solid red; */
     padding: 1rem;
     text-align: center;
     flex: 0 0 100%;
@@ -139,10 +157,28 @@ footer {
 
 article aside {
     border: 2px dashed silver;
-    margin: 2%;
+    margin: 3% 2%;
     padding: 1rem;
     overflow: hidden;
 }
+
+code {
+    display: inline-block;
+    margin: .5rem 0;
+    padding: 1rem;
+    font-family: 'Source Code Pro', monospace;
+    background-color: #222;
+    color: #eee;
+    font-size: .7rem;
+    line-height: 1.5rem;
+}
+
+.brackets {color: gray;}
+.tag-name {color: rgb(8, 125, 250);}
+.attribute {color: lightskyblue;}
+.att-value {color: rgb(252, 157, 48);}
+.selector {color: rgb(252, 198, 48);}
+.bold {font-weight: bold;}
 
 @media (min-width: 500px) {
     body {
@@ -157,6 +193,10 @@ article aside {
     aside[role="page-sidebar"] {
         flex: 0 0 25%;
         overflow: hidden;
+    }
+
+    code {
+        font-size: 1rem;
     }
 
 }

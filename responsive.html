@@ -9,35 +9,53 @@
 </head>
 <body>
     <header role="page-header">
-        <div class="sim-logo">LOGO</div>
+        <div class="sim-logo">BOB'S BLOG</div>
         <nav>
-            <input class="trigger" type="checkbox" id="mainNavButton">
+            <input type="checkbox" id="mainNavButton">
             <label for="mainNavButton">Menu</label>
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="leale-solutions.html">LEALE</a></li>
-                <li><a href="responsive.html">RESPONSIVE</a></li>
+                <li><a href="responsive.html" class="active">RESPONSIVE</a></li>
                 <li><a href="/">MENU4</a></li>
             </ul>
         </nav>
-        <h1>Page Headline</h1>
+        <h1>Bob's Blog &mdash; Bloggify!</h1>
     </header>
     <main>
         <article>
             <section role="main-article">
                 <header role="article-header">
-                    <h2>Article Headline</h2>
+                    <h2>Checkbox "Hack"</h2>
                 </header>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nihil dolorem, est officiis repudiandae beatae, consequatur sed error suscipit explicabo voluptates! Porro nobis atque ullam, eos earum amet eligendi ipsam!
+                    The Checkbox "Hack" is where you use a connected label and checkbox input and usually some other element you are trying to control, like the nested <span class="tag-name bold">&lt;ul&gt;</span> in the nav menu below.
                 </p>
+                <code>
+                    <span class="brackets">&lt;</span><span class="tag-name">nav</span><span class="brackets">&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;<span class="brackets">&lt;</span><span class="tag-name">input</span> <span class="attribute">type</span>=<span class="att-value">"checkbox"</span> <span class="attribute">id</span>=<span class="att-value">"mainNavButton"</span><span class="brackets">&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;<span class="brackets">&lt;</span><span class="tag-name">label</span> <span class="attribute">for</span>=<span class="att-value">"mainNavButton"</span><span class="brackets">&gt;</span>MENU<span class="brackets">&lt;/</span><span class="tag-name">label</span><span class="brackets">&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;<span class="brackets">&lt;</span><span class="tag-name">ul</span><span class="brackets">&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="brackets">&lt;</span><span class="tag-name">li</span><span class="brackets">&gt;</span>menu link (anchor tag) here<span class="brackets">&lt;/</span><span class="tag-name">li</span><span class="brackets">&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;<span class="brackets">&lt;</span><span class="tag-name">ul</span><span class="brackets">&gt;</span><br>
+                    <span class="brackets">&lt;/</span><span class="tag-name">nav</span><span class="brackets">&gt;</span>
+                </code>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nihil dolorem, est officiis repudiandae beatae, consequatur sed error suscipit explicabo voluptates! Porro nobis atque ullam, eos earum amet eligendi ipsam!
+                    Then with CSS, you hide the checkbox entirely. This can be done by positioning it off the page with absolute positioning or setting its opacity to zero. But, even though the checkbox is hidden, clicking the <span class="tag-name bold">&lt;label&gt;</span> still toggles its value on and off. Then you can use the adjacent sibling combinator to style the <span class="tag-name bold">&lt;ul&gt;</span> differently based on the <span class="tag-name bold">:checked</span> state of the input.
                 </p>
+                <h3>Using the Tilda (~)</h3>
+                <p>Also known as the adjacent sibling combinator, the tilda (~) is part of the secret to making this hack work.</p>
+                <code>
+                    <span class="selector">input[</span><span class="attribute">type</span>=<span class="att-value">"checkbox"</span><span class="selector">]:checked</span> ~ <span class="selector">ul</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">display</span>: <span class="att-value">block</span> <span class="tag-name">!important</span>;<br>
+                    }
+                </code>
+                <p>This combinator allows you to style a subsequent adjacent element completely differently depending on the state of that checkbox, which you don't even see. Pretty cool!</p>
             </section>
             <aside role="article-aside">
-                <h3>Article aside headline</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h3>Is this really a CSS hack?</h3>
+                <p>If you’ve been writing CSS for at least a couple of years, then you’ve most certainly used a CSS hack. But if you’re relatively new to CSS, it’s possible you’ve heard the term but aren’t sure exactly what it means. This <a href="https://www.sitepoint.com/what-is-the-definition-of-a-css-hack/">site</a> can help you better understand CSS Hacks.</p>
+                <P><strong>Hint:</strong> this <em><dfn title="Trick is probably a better term to use to describe this technique.">trick</dfn></em> falls outside of the technical definition of a hack.</P>
             </aside>
         </article>
         <article>
@@ -58,7 +76,32 @@
         </article>
     </main>
     <aside role="page-sidebar">
-        <h3>Page sidebar</h3>
+        <h3>Bob's Blog is brought to you by LOG!</h3>
+        <img src="log.jpg">
+        <p>
+            What rolls down stairs<br>
+            Alone or in pairs,<br>
+            And over your neighbor's dog?<br>
+            What's great for a snack,<br>
+            And fits on your back?<br>
+            It's log, log, log
+        </p>
+        <p>
+            It's log, it's log,<br>
+            It's big, it's heavy, it's wood.<br>
+            It's log, it's log, it's better than bad, it's good.
+        </p>
+        <p>    
+            Everyone wants a log<br>
+            You're gonna love it, log<br>
+            Come on and get your log<br>
+            Everyone needs a log<br>
+            Log log log
+        </p>
+        <p>    
+            *Whistle*<br>
+            <strong>Log! from <a href="https://www.youtube.com/watch?v=-fQGPZTECYs">blammo</a></strong>
+        </p>
     </aside>
     <footer>
         &copy; 2017 &bull; Bob's Blog<sup>&trade;</sup> &bull; All rights reserved.
