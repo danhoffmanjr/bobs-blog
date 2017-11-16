@@ -132,7 +132,9 @@ img {
     width: 100%;
 }
 
-p {
+main section ul {padding-left: 3rem;}
+
+main p, main li {
     padding: .5rem 0;
     font-size: 1.1rem;
     line-height: 1.6rem;
@@ -161,6 +163,8 @@ article aside {
     padding: 1rem;
     overflow: hidden;
 }
+
+article aside ul {padding-left: 1rem;}
 
 code {
     display: inline-block;
